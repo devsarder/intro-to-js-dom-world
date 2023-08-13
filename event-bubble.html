@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Event Bubble</title>
+  </head>
+  <body>
+    <h1>Exploring events Bubble</h1>
+
+    <section id="ul-container">
+      <ul id="items-container">
+        <li id="item-1">Lorem, ipsum.</li>
+        <li id="item-2">Quas, labore.</li>
+        <li id="item-3">Sint, laborum!</li>
+        <li id="item-4">Maiores, porro?</li>
+        <li id="item-5">Quae, ut.</li>
+      </ul>
+    </section>
+
+    <script>
+      document
+        .getElementById("ul-container")
+        .addEventListener("click", function (event) {
+          console.log("ul-container clicked");
+        });
+      document
+        .getElementById("items-container")
+        .addEventListener("click", function (event) {
+          console.log("item-container clicked");
+        });
+      document
+        .getElementById("item-2")
+        .addEventListener("click", function (event) {
+          console.log("item-2 clicked");
+          event.stopImmediatePropagation();
+        });
+      document
+        .getElementById("item-1")
+        .addEventListener("click", function (event) {
+          console.log("item-1 clicked");
+          event.stopImmediatePropagation();
+        });
+      document
+        .getElementById("item-3")
+        .addEventListener("click", function (event) {
+          console.log("item-3 clicked");
+          event.stopImmediatePropagation();
+        });
+      document
+        .getElementById("item-4")
+        .addEventListener("click", function (event) {
+          console.log("item-4 clicked");
+          event.stopImmediatePropagation();
+        });
+    </script>
+  </body>
+</html>

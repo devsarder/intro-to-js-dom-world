@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Events Delegation</title>
+  </head>
+  <body>
+    <h1>Are you ready to explore events delegation</h1>
+
+    <ul id="items-container">
+      <li class="item">Lorem, ipsum.</li>
+      <li class="item">Soluta, atque.</li>
+      <li class="item">Vero, reiciendis.</li>
+      <li class="item">Et, quisquam?</li>
+    </ul>
+    <br>
+    <button id="btn-add-item">Add Item</button>
+
+    <script>
+      document
+        .getElementById("items-container")
+        .addEventListener("click", function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+
+        document.getElementById('btn-add-item').addEventListener("click", function(){
+            const newItem = document.createElement('li');
+            newItem.innerText = `added new item `
+            const itemContainer = document.getElementById('items-container');
+            itemContainer.appendChild(newItem);
+            newItem.classList.add('item');
+        } )
+    </script>
+  </body>
+</html>
