@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Summary Html Dom</title>
+  </head>
+  <body>
+    <h2 id="handler-status">Default Text</h2>
+
+    <button id="event-listener">click me to change the default text</button>
+    <br />
+    <br />
+
+    <p id="display-new-text">Default text</p>
+    <input type="text" name="" id="input-field" />
+    <button id="update-btn">Update Text</button>
+
+    <!-- <script src="js/event.js"></script> -->
+
+    <script>
+      document
+        .getElementById("event-listener")
+        .addEventListener("click", function () {
+          const event = document.getElementById("handler-status");
+          event.innerHTML = "click again to go back";
+        });
+
+      // dom for updating text field values to the paragraph;
+      document
+        .getElementById("update-btn")
+        .addEventListener("click", function () {
+          const input = document.getElementById("input-field");
+          // console.log(input);
+          const inputValue = input.value;
+          // console.log(inputValue);
+          const displayNewText = document.getElementById("display-new-text");
+          displayNewText.innerText = inputValue;
+          // input.value = "";
+        });
+    </script>
+  </body>
+</html>
